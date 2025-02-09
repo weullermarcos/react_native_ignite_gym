@@ -15,7 +15,7 @@ export default function App() {
         
         <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
         
-        {fonstLoaded ?  <SigIn /> : <Loading /> }
+        <SigIn />
 
     </GluestackUIProvider>
   );
