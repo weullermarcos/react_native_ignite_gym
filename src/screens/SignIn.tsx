@@ -1,4 +1,6 @@
 import { VStack, Image, Center, Text, Heading, ScrollView } from '@gluestack-ui/themed';
+import { AuthNavigationRoutesProps } from '@routes/auth.routes';
+import { useNavigation } from '@react-navigation/native';
 
 import BackgroundImg from '@assets/background.png';
 import Logo from '@assets/logo.svg';
@@ -7,10 +9,18 @@ import { Button } from '@components/Button';
 
 
 export function SigIn() {
+
+  const navigation = useNavigation<AuthNavigationRoutesProps>();
+
+  // Navega para a tela de cadastro
+  function hanleNewAccount() {
+    navigation.navigate('signUp');
+  }
+
   return (
 
     <ScrollView contentContainerStyle={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
-      <VStack flex={1} bg='$gray700'>
+      <VStack flex={1}>
           <Image 
               w='$full'
               h={624}
@@ -35,7 +45,7 @@ export function SigIn() {
 
             <Center flex={1} justifyContent="flex-end" mt="$4">
               <Text color='$gray100' fontSize="$sm" mb="$3" fontFamily="$body">Ainda não possui uma conta?</Text>
-              <Button title='Criar Conta' variant='outline' />
+              <Button title='Criar Conta' variant='outline' onPress={hanleNewAccount}/>
             </Center>
 
           </VStack>
