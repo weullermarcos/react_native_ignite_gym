@@ -36,10 +36,16 @@ export function AppRoutes(){
             tabBarStyle: {
                 backgroundColor: tokens.colors.gray600,
                 borderTopWidth: 0,
-                height: Platform.OS === 'android' ? 'auto' : 96,
-                paddingBottom: tokens.space['10'],
-                paddingTop: tokens.space['6'],
+                height: Platform.OS === 'android' ? 70 : 96,
+                paddingBottom: tokens.space['4'],
+                paddingTop: tokens.space['4'],
+                justifyContent: 'center',
+                alignItems: 'center',
               },
+            tabBarItemStyle: {
+                justifyContent: 'center',
+                alignItems: 'center',
+            }
         }}>
             <Screen name="home"     component={Home}     options={{ tabBarIcon: ({ color }) => <HomeSvg    fill={color} width={iconSize} height={iconSize} /> }} />
             <Screen name="history"  component={History}  options={{ tabBarIcon: ({ color }) => <HistorySvg fill={color} width={iconSize} height={iconSize} /> }} />
