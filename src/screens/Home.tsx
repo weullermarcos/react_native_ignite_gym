@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { FlatList } from 'react-native';
 import { Group } from '@components/Group';
 import { HomeHeader } from '@components/HomeHeader';
-import { Center, HStack, VStack } from '@gluestack-ui/themed';
+import { Center, Heading, HStack, Text, VStack } from '@gluestack-ui/themed';
+import { ExerciseCard } from '@components/ExerciseCard';
 
 
 export function Home(){
@@ -25,8 +26,18 @@ export function Home(){
                 contentContainerStyle={{ paddingHorizontal: 32 }}
                 style={{ marginVertical: 40, maxHeight: 40, minHeight: 44 }}
             >
-
             </FlatList>
+
+            <VStack px="$8">
+
+                <HStack justifyContent='space-between' mb="$5" alignItems='center'>
+                    <Heading color="$gray200" fontSize="$md" fontFamily="$heading" > Exercícios </Heading>
+                    <Text color="$gray200" fontSize="$sm" fontFamily='$body' >4</Text>
+                </HStack>
+
+                <ExerciseCard />
+
+            </VStack>
             
         </VStack>
     )
